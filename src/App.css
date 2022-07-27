@@ -64,3 +64,9 @@
 .code {
   font-size: 12px;
 }
+
+.sent {
+  background-color: green;
+  color: white;
+  padding: 5px;
+}
