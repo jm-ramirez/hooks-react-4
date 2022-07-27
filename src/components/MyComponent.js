@@ -7,6 +7,7 @@ export const MyComponent = () => {
         <div>
             <h1>Hook useId</h1>
             <input id={id} name='name' placeholder='Name' />
+            <hr/>
         </div>
     )
 }
