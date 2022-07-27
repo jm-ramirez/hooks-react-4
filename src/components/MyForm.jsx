@@ -3,16 +3,31 @@ import React, { useState } from 'react'
 export const MyForm = () => {
     const [form, setForm] = useState({});
 
+    const serializerForm = (form) => {
+        const formData = new FormData(form);
+
+        const completeObject = {};
+
+        for (let [name, value] of formData) {
+            completeObject[name] = value;
+        }
+
+        return completeObject;
+    };
+
     const sent = (e) => {
         e.preventDefault();
 
-        let course = {
-            title: e.target.title.value,
-            year: e.target.year.value,
-            description: e.target.description.value,
-            autor: e.target.autor.value,
-            email: e.target.email.value
-        }
+        // let course = {
+        //     title: e.target.title.value,
+        //     year: e.target.year.value,
+        //     description: e.target.description.value,
+        //     autor: e.target.autor.value,
+        //     email: e.target.email.value
+        // };
+
+        let course = serializerForm(e.target);
+
         setForm(course);
     }
 
