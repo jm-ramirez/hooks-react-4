@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { MyComponent } from './components/MyComponent';
 import { CustomTest } from './components/CustomTest';
@@ -9,11 +8,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         {/* custom hook useString */}
         <CustomTest/>
         {/* custom hook useForm */}
         <MyForm/>
+        {/* custom hook useAjax */}
         <MyUser/>
         {/* hook useId */}
         <MyComponent/>
