@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { MyComponent } from './components/MyComponent';
 import { CustomTest } from './components/CustomTest';
+import { MyForm } from './components/MyForm';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <MyComponent/>
         {/* custom hook */}
         <CustomTest/>
+
+        <MyForm/>
       </header>
     </div>
   );
