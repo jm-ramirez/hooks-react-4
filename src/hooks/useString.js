@@ -1,17 +1,22 @@
+import { useState } from "react";
+
 export const useString = (text) => {
+    const [myText, setMyText] = useState(text);
+
     const upperCase = () => {
-        return text.toUpperCase();
+        setMyText(text.toUpperCase());
     };
 
     const lowerCase = () => {
-        return text.toLowerCase();
+        setMyText(text.toLowerCase());
     };
 
     const concat = (added) => {
-        return text+added;
+        setMyText(text+added);
     };    
 
     return {
+        state: myText,
         upperCase,
         lowerCase,
         concat

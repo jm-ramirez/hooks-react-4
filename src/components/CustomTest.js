@@ -2,13 +2,16 @@ import React from 'react';
 import { useString } from '../hooks/useString';
 
 export const CustomTest = () => {
-    const { upperCase, lowerCase, concat } = useString('juanmanuel.COM');
-  return (
-    <div>
-        <h1>Testing custom test</h1>
-        <p>Upper case: {upperCase()}</p>
-        <p>Lower case: {lowerCase()}</p>
-        <p>Concat: {concat('.ar')}</p>
-    </div>
-  )
+    
+    const { state, upperCase, lowerCase, concat } = useString('Juanmanuel.com');
+    return (
+        <div>
+            <h1>Testing custom test</h1>
+            <h2>{state}</h2>
+
+            <button onClick={upperCase}>Upper case</button>
+            <button onClick={lowerCase}>Lower case</button>
+            <button onClick={e => concat('.ar') }>Concat</button>
+        </div>
+    )
 }
