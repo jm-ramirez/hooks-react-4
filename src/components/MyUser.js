@@ -1,46 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { useAjax } from '../hooks/useAjax';
 
 export const MyUser = () => {
-    const [user, setUser] = useState({
-        data: null,
-        loading: true
-    });
-
-    const getUser = async(url) => {
-        setUser({
-            ...user,
-            loading: true
-        });
-        
-        setTimeout(async() => {
-            const request = await fetch(url);
-            const {data} = await request.json();
-    
-            setUser({
-                data,
-                loading: false
-            });
-        }, 2000);
-    };
+    const [url, setUrl] = useState('https://reqres.in/api/users/1')
+    const {data, loading} = useAjax(url);
 
     const getId = e => {
         let id = parseInt(e.target.value);
-        let url = `https://reqres.in/api/users/${id}`;
-
-        getUser(url);
-    };
-
-    useEffect(() => {
-        getUser('https://reqres.in/api/users/1')
-    }, [])
-    
+        setUrl(`https://reqres.in/api/users/${id}`);
+    };    
 
     return (
         <div>
             <h1>My user</h1>
             <p>User data</p>
-            <p>{user?.loading ? "Loading..." : ""}</p>
-            <p>Name: {user?.data?.first_name} {user?.data?.last_name}</p>
+            <p>{loading ? "Loading..." : ""}</p>
+            <p>Name: {data?.first_name} {data?.last_name}</p>
             <input type='number' name='id' onChange={getId}/>
 
             <hr/>
