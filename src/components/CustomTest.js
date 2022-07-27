@@ -12,6 +12,7 @@ export const CustomTest = () => {
             <button onClick={upperCase}>Upper case</button>
             <button onClick={lowerCase}>Lower case</button>
             <button onClick={e => concat('.ar') }>Concat</button>
+            <hr/>
         </div>
     )
 }

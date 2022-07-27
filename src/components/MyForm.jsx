@@ -20,6 +20,7 @@ export const MyForm = () => {
 
                 <input type='submit' value='Send' />
             </form>
+            <hr />
         </div>
     )
 }
